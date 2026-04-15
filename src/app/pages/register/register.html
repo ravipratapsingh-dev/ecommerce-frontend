@@ -1,0 +1,16 @@
+<h2>Register</h2>
+
+<input type="text" placeholder="Name" [(ngModel)]="name"><br><br>
+
+<input type="email" placeholder="Email" [(ngModel)]="email"><br><br>
+
+<input type="password" placeholder="Password" [(ngModel)]="password"><br><br>
+
+<button (click)="register()">Register</button>
+
+<p>
+  Already have an account?
+  <a (click)="switchToLoginEvent.emit()" style="cursor:pointer; color:blue;">
+    Login
+  </a>
+</p>

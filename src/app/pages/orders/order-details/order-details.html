@@ -1,0 +1,30 @@
+<h2 class="title">📦 Order Details</h2>
+
+<div *ngIf="order !== null; else loading" class="detail-card">
+
+  <p><b>Order ID:</b> {{order.id}}</p>
+  <p><b>Address:</b> {{order.address}}</p>
+
+  <p>
+    <b>Status:</b>
+    <span>{{order.status}}</span>
+  </p>
+
+  <p><b>Total:</b> ₹{{order.totalAmount}}</p>
+  <p><b>Payment:</b> {{order.paymentMethod}}</p>
+
+  <h3>Items:</h3>
+
+  <div *ngFor="let item of order.items">
+    <p>
+      {{item.product?.name}} 
+      - ₹{{item.product?.price}} 
+      x {{item.quantity}}
+    </p>
+  </div>
+
+</div>
+
+<ng-template #loading>
+  <p>⏳ Loading order details...</p>
+</ng-template>

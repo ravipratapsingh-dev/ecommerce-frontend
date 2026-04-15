@@ -1,0 +1,48 @@
+<h2 class="title">📦 My Orders</h2>
+
+<div *ngIf="orders && orders.length > 0; else noOrders" class="container">
+
+  <div *ngFor="let order of orders" class="order-card">
+
+    <!-- LEFT SIDE -->
+    <div class="order-info">
+      <p><b>ID:</b> {{order.id}}</p>
+      <p><b>Address:</b> {{order.address}}</p>
+
+      <p>
+        <b>Status:</b>
+        <span [ngClass]="order.status">{{order.status}}</span>
+      </p>
+
+      <p><b>Total:</b> ₹{{order.totalAmount}}</p>
+
+      <!-- ITEMS -->
+      <div class="order-items">
+        <div *ngFor="let item of order.items">
+          <p>{{item.productName}} - ₹{{item.price}} x {{item.quantity}}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE BUTTONS -->
+    <div class="actions">
+
+      <button class="view-btn" (click)="viewDetails(order.id)">
+        🔍 View
+      </button>
+
+      <button class="cancel-btn"
+        *ngIf="order.status === 'PLACED'" 
+        (click)="cancelOrder(order.id)">
+        ❌ Cancel
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<ng-template #noOrders>
+  <p class="empty">No orders yet 😢</p>
+</ng-template>

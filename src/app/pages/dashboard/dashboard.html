@@ -1,0 +1,47 @@
+<!-- 🔥 NAVBAR -->
+<div class="navbar">
+  <h2>🛒 MyShop</h2>
+
+  <input type="text" placeholder="Search products..." />
+
+  <div class="cart" (click)="goToCart()" style="cursor: pointer;">
+    🛒 Cart
+    <span *ngIf="cartCount > 0" class="badge">
+      {{ cartCount }}
+    </span>
+  </div>
+</div>
+
+<!-- 🔥 BANNER -->
+<div class="banner">
+  <h1>🔥 Big Sale 50% OFF 🔥</h1>
+</div>
+
+<!-- 🔥 PRODUCTS -->
+<div class="products">
+
+  <!-- ❗ EMPTY STATE -->
+  <h2 *ngIf="products.length === 0" style="text-align:center; margin-top:20px;">
+    No Products Found ❌
+  </h2>
+
+  <!-- ✅ PRODUCT LIST -->
+  <div class="card" *ngFor="let p of products">
+
+    <!-- IMAGE -->
+    <img [src]="getImage(p.name)" alt="product" width="150" />
+
+    <!-- NAME -->
+    <h3>{{ p.name }}</h3>
+
+    <!-- PRICE -->
+    <p>₹{{ p.price }}</p>
+
+    <!-- BUTTON -->
+    <button (click)="addToCart(p.id)">
+      Add to Cart
+    </button>
+
+  </div>
+
+</div>

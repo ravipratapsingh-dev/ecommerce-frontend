@@ -1,0 +1,13 @@
+.title {
+  text-align: center;
+  margin: 20px;
+}
+
+.detail-card {
+  width: 60%;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}

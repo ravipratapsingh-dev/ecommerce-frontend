@@ -1,0 +1,22 @@
+<div class="auth-container">
+  <div class="card">
+
+    <h1>Welcome</h1>
+
+    <div class="toggle">
+      <button (click)="isLogin = true">Login</button>
+      <button (click)="isLogin = false">Register</button>
+    </div>
+
+    <!-- LOGIN -->
+    <div *ngIf="isLogin">
+      <app-login (switchToRegister)="isLogin = false"></app-login>
+    </div>
+
+    <!-- REGISTER -->
+    <div *ngIf="!isLogin">
+      <app-register (switchToLoginEvent)="isLogin = true"></app-register>
+    </div>
+
+  </div>
+</div>

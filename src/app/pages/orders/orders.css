@@ -1,0 +1,118 @@
+/* ================= TITLE ================= */
+.title {
+  text-align: center;
+  margin: 25px 0;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ================= ORDER CARD ================= */
+.order-card {
+  width: 60%;
+  background: #ffffff;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  transition: 0.2s;
+}
+
+.order-card:hover {
+  transform: scale(1.02);
+}
+
+/* ================= LEFT SIDE INFO ================= */
+.order-info {
+  width: 70%;
+}
+
+.order-info p {
+  margin: 6px 0;
+  font-size: 15px;
+}
+
+/* ================= ITEMS ================= */
+.order-items {
+  margin-top: 10px;
+  padding-left: 10px;
+  border-left: 3px solid #eee;
+}
+
+/* ================= ACTION BUTTONS ================= */
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ================= COMMON BUTTON ================= */
+button {
+  cursor: pointer;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: 0.2s;
+  min-width: 120px;
+}
+
+/* ================= VIEW BUTTON ================= */
+.view-btn {
+  background: #007bff;
+  color: white;
+}
+
+.view-btn:hover {
+  background: #0056b3;
+}
+
+/* ================= CANCEL BUTTON ================= */
+.cancel-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.cancel-btn:hover {
+  background: #b02a37;
+}
+
+/* ================= STATUS COLORS ================= */
+.PLACED {
+  color: orange;
+  font-weight: bold;
+}
+
+.CANCELLED {
+  color: red;
+  font-weight: bold;
+}
+
+.SHIPPED {
+  color: blue;
+  font-weight: bold;
+}
+
+.DELIVERED {
+  color: green;
+  font-weight: bold;
+}
+
+/* ================= EMPTY STATE ================= */
+.empty {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 40px;
+  color: gray;
+}
